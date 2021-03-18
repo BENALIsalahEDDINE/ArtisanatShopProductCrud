@@ -1,0 +1,207 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#App{
+    font-size: 10px;
+    font-family: "Lato",Arial,sans-serif;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg,#EE7752,#E73C7E,#23D5AB);
+    background-size: 400%,400%;
+    position: relative;
+    animation : change 10s ease-in-out infinite;
+}
+
+#artisanat{
+    margin-left: -100px;
+}
+h1{
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border:3px solid #fff;
+    position: absolute;
+    top: 300px;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    padding: 5rem 10rem;
+}
+
+
+@keyframes change{
+       0% {
+    background-position: 0 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0 50%;
+        }
+
+}
+
+.vert-left {
+	position: absolute !important;
+	top: 600px;
+	bottom: 0;
+	left: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: left;
+}
+.vert-left p {
+	font-size: 50px;
+    font-family:G;
+	color: #fff;
+	text-align: left;
+	padding-left: 30px;
+	padding-right: 100px
+}
+
+.content{
+    position: relative;
+}
+.content h2{
+    color: #fff;
+    transform: translate(-50%,-50%);
+    font-size: 7em;
+    margin-top:250px ; 
+    margin-left: 500px;
+    letter-spacing: 10px;
+    line-height: 120px;
+}
+.content h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 2px #acb9be;
+}
+
+.content h2:nth-child(2){
+    color:  #03a9f4;
+    animation:animate 4s ease-in-out infinite;
+}
+
+@keyframes animate{
+   0%,100%{
+       clip-path: polygon(0% 45%,15% 44%,32% 50%,54% 60%,70% 61%,84% 59%,100% 52%,100% 100%,0% 100%);
+   }
+   50%{
+    clip-path: polygon(0% 60%,16% 65%,34% 66%,51% 62%,67% 50%,84% 45%,100% 46%,100% 100%,0% 100%);
+
+   }
+
+
+}
+.form-container{
+    position: absolute;
+    top: 50%;
+    right:-10%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3));
+    width: 600px;
+    height: 950px;
+    padding:50px 30px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 60px #000;
+    margin-right: 100px;
+}
+.form{
+    height: 500px;
+}
+::placeholder{
+    font-size: 20px;
+}
+.control input{
+    line-height: 30px;
+    width: 100%;
+    line-height: 40px;
+    display: block;
+    padding: 10px;
+    color: #222;
+    border: none;
+    outline: none;
+    margin: 1em 0;
+
+}
+button{
+    width: 30%;
+    line-height: 90px;
+}
+label{
+    font-size: 20px;
+}
+#checkbox{
+    font-size: 400px;
+    height: 15px;
+    width: 15px;
+}
+#remember{
+    font-size: 20px;
+}
+#email{
+    font-size: 20px;
+}
+#password{
+    font-size: 20px;
+
+}
+.control input[type="submit"]{
+    background: crimson;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2em;
+    opacity: 5.8;
+    transition: opacity .3s ease;
+    width: 100%;
+}
+
+.link a:hover{
+    opacity:1;
+}
+
+.copyrights{
+    margin-top: 300px;
+    font-size:small;
+    font-family: cursive;
+    color: black;
+    margin-left: 350px;
+}
+p{
+    font-size: large;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
