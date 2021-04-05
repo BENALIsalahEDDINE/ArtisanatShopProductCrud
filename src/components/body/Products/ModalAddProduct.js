@@ -247,11 +247,12 @@ class ModalAddProduct extends Component {
                   defaultValue="Choisir une catégorie..."
                 >
                   <option disabled>Choisir une catégorie...</option>
-                  <option>Visage</option>
-                  <option>Cheveux</option>
-                  <option>Huile</option>
-                  <option>Peau</option>
-                  <option>Aliment</option>
+                  <option>Textile</option>
+              <option>Cuir</option>
+              <option>Poterie</option>
+              <option>Tapis</option>
+              <option>Vannerie</option>
+              <option>Broderie</option>
                 </Input>
               </FormGroup>
               <FormGroup>
