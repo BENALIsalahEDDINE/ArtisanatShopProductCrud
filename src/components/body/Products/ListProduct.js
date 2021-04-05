@@ -66,10 +66,12 @@ class ListProduct extends Component {
             }}
           >
             <option>Tout</option>
-            <option>Huile</option>
-            <option>Aliment</option>
-            <option>Visage</option>
-            <option>Cheveux</option>
+            <option>Textile</option>
+            <option>Cuir</option>
+            <option>Poterie</option>
+            <option>Tapis</option>
+            <option>Vannerie</option>
+            <option>Broderie</option>
           </select>
           <input
             type="text"

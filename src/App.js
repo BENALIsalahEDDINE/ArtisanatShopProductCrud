@@ -37,7 +37,7 @@ class App extends Component {
             {
               //accessible aux administrateurs uniquement
             }
-            <Route
+            <PrivateRouteAdmin
               exact
               path="/dashboardAdmin"
               component={DashboardAdmin}

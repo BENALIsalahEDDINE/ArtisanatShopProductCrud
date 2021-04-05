@@ -1,0 +1,57 @@
+.delete,
+.cart,
+.update {
+  margin: 0px 20px 0px 20px;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+}
+
+.delete {
+  color: #ef5753;
+}
+
+.update {
+  color: #6cb2eb;
+}
+
+.vente {
+  color: green;
+}
+.rupture {
+  color: red;
+}
+
+.appro {
+  color: orange;
+}
+
+.product-image {
+  height: 300px;
+}
+
+.product-desc {
+  height: 200px;
+}
+
+.product-src {
+  height: 30px;
+}
+
+.cart {
+  color: #28a745;
+}
+
+.delivery {
+  cursor: pointer;
+  color: #faad63;
+}
+
+.disabled {
+  cursor: none;
+  color: #b8c2cc;
+}
+
+.disabled:hover {
+  transform: scale(1);
+}

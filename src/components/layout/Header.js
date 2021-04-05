@@ -28,7 +28,7 @@ class Header extends Component {
           >
             <NavbarBrand href="/login">
               {" "}
-              Artisanat<em className="text-success">BIO </em>
+              Artisanat<em className="text-success">SHOP </em>
             </NavbarBrand>
             <NavbarToggler />
             <Collapse navbar>
