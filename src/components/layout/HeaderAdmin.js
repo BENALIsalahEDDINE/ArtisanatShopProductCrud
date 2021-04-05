@@ -19,6 +19,8 @@ class HeaderAdmin extends Component {
     e.preventDefault();
   };
 
+
+  
   render() {
     return (
       <>
@@ -27,8 +29,8 @@ class HeaderAdmin extends Component {
             
             className="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end"
             light
-            expand="md"
-          >
+            expand="md" //88
+          >             
             <NavbarBrand href="/login">
               {" "}
               Artisanat<em id="emm">SHOP </em>
@@ -39,7 +41,7 @@ class HeaderAdmin extends Component {
                 <NavItem>
                   <NavLink href="/products" className="nav-element">
                     {" "}
-                    Produits{" "}
+                    Produits{" "} 
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -55,12 +57,7 @@ class HeaderAdmin extends Component {
                 <NavItem>
                   <NavLink href="/fournisseurs" className="nav-element">
                     {" "}
-                    Artisans
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/commandes" className="nav-element">
-                    Commandes
+                    Fournisseurs
                   </NavLink>
                 </NavItem>
                 <NavItem>
