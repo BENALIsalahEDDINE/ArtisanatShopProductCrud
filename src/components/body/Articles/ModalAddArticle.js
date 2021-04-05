@@ -209,9 +209,9 @@ class ModalAddArticle extends Component {
                   defaultValue="Choisir une catégorie..."
                 >
                   <option disabled>Choisir une catégorie...</option>
-                  <option>Recette</option>
-                  <option>Santé</option>
-                  <option>Beauté</option>
+                  <option>Tapis</option>
+                  <option>Vannerie</option>
+                  <option>Textile</option>
                 </Input>
               </FormGroup>
               <FormGroup>
