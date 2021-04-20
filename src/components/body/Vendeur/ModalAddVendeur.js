@@ -58,18 +58,14 @@ class ModalAddVendeur extends Component {
     
   }
 
-  fileUploadHandler = async ()  =>{
-    return axios.post(
-      'https://api.imgur.com/3/image', {
-        image:  "'"+ this.state.selectedFileBinary.split(",")[1]+ "'",
-      }, {
-        headers: {
-          Authorization: "Client-ID 56d10e1ad4eb92f" ,
-        }
-      }
-    )
-  
-}
+  fileUploadHandler = async () => {
+    const formData =new FormData();
+    formData.append("file",this.state.selectedFile);
+    formData.append("upload_preset","lgdqkovn");
+    console.log(this.state.selectedFile);
+    return axios.post("https://api.cloudinary.com/v1_1/ddowlqedx/image/upload",
+    formData);
+  };
 
 
 
@@ -84,32 +80,34 @@ class ModalAddVendeur extends Component {
     if (this.validate) {
       console.log("passed");
       this.fileUploadHandler().then(response => {
+        console.log(response.data.img);
         this.setState({
-          img: response.data.data.link,
-      });
+          img: response.data.img,
+        });
 
       const {
+        img,
         nom,
         prenom,
         ville,
-        region,
-        img
+        region
+        
     } = this.state;
-
+    console.log(this.state)
       axios
         .post("http://localhost:9092/Vendeur", {
-            nom,
-            prenom,
-            ville,
-            region,
-            img
+          img,
+          nom,
+          prenom,
+          ville,
+          region
         })
         .then(() => {
-        console.log({  nom,
-            prenom,
-            ville,
-            region,
-            img});
+        console.log({   img,
+          nom,
+          prenom,
+          ville,
+          region});
           console.log("vendeur ajouté");
           this.toggleNewVendeurModal();
           this.props.fetchVendeurs();

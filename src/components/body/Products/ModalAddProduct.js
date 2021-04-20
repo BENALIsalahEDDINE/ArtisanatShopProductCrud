@@ -71,18 +71,12 @@ class ModalAddProduct extends Component {
   };
 
   fileUploadHandler = async () => {
-   console.log(this.state.selectedFile);
-    return axios.post(
-      "https://api.imgur.com/3/image",
-      {
-        image: "'" + this.state.selectedFileBinary.split(",")[1] + "'",
-      },
-      {
-        headers: {
-          Authorization: "Client-ID 56d10e1ad4eb92f",
-        },
-      }
-    );
+    const formData =new FormData();
+    formData.append("file",this.state.selectedFile);
+    formData.append("upload_preset","lgdqkovn");
+    console.log(this.state.selectedFile);
+    return axios.post("https://api.cloudinary.com/v1_1/ddowlqedx/image/upload",
+    formData);
   };
 
   handleAddProduct = (e) => {
@@ -90,12 +84,14 @@ class ModalAddProduct extends Component {
 
     e.preventDefault();
     const isValid = this.validate();
-
+     
     if (isValid) {
       this.fileUploadHandler().then((result) => {
+        console.log(result.data.url);
         this.setState({
-          url: result.data.data.link,
+          url: result.data.url,
         });
+
 
         const {
           idCat,
@@ -108,6 +104,7 @@ class ModalAddProduct extends Component {
           qte,
           url,
         } = this.state;
+        console.log(this.state)
         axios
           .post(`http://localhost:9092/product`, {
             idCat,
@@ -184,12 +181,14 @@ class ModalAddProduct extends Component {
       this.setState({ idCat: 1 });
     } else if (name === "Cuir") {
       this.setState({ idCat: 2 });
-    } else if (name === "Tapis") {
+    }else if (name === "Poterie") {
       this.setState({ idCat: 3 });
-    } else if (name === "Vannerie") {
+    } else if (name === "Tapis") {
       this.setState({ idCat: 4 });
-    }else if (name === "Broderie") {
+    } else if (name === "Vannerie") {
       this.setState({ idCat: 5 });
+    }else if (name === "Broderie") {
+      this.setState({ idCat: 6 });
     }
   };
 
@@ -249,6 +248,7 @@ class ModalAddProduct extends Component {
                   <option disabled>Choisir une catégorie...</option>
                   <option>Textile</option>
               <option>Cuir</option>
+              <option>Poterie</option>
               <option>Tapis</option>
               <option>Vannerie</option>
               <option>Broderie</option>

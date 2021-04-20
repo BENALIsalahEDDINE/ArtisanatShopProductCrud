@@ -58,17 +58,12 @@ class ModalAddUser extends Component {
   };
 
   fileUploadHandler = async () => {
-    return axios.post(
-      "https://api.imgur.com/3/image",
-      {
-        image: "'" + this.state.selectedFileBinary.split(",")[1] + "'",
-      },
-      {
-        headers: {
-          Authorization: "Client-ID 56d10e1ad4eb92f",
-        },
-      }
-    );
+    const formData =new FormData();
+    formData.append("file",this.state.selectedFile);
+    formData.append("upload_preset","lgdqkovn");
+    console.log(this.state.selectedFile);
+    return axios.post("https://api.cloudinary.com/v1_1/ddowlqedx/image/upload",
+    formData);
   };
 
   handleAddUser = (e) => {
@@ -77,10 +72,10 @@ class ModalAddUser extends Component {
     const isValid = this.validate();
 
     if (isValid) {
-      console.log("passed");
-      this.fileUploadHandler().then((response) => {
+      this.fileUploadHandler().then((result) => {
+        console.log(result.data.url);
         this.setState({
-          url: response.data.data.link,
+          url: result.data.url,
         });
 
         const {
@@ -92,7 +87,7 @@ class ModalAddUser extends Component {
           email,
           url,
         } = this.state;
-
+        console.log(this.state)
         axios
           .post(`http://localhost:9092/user`, {
             firstName,

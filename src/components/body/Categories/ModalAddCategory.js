@@ -50,18 +50,12 @@ class ModalAddCategory extends Component {
   };
 
   fileUploadHandler = async () => {
+    const formData =new FormData();
+    formData.append("file",this.state.selectedFile);
+    formData.append("upload_preset","lgdqkovn");
     console.log(this.state.selectedFile);
-    return axios.post(
-      "https://api.imgur.com/3/image",
-      {
-        image: "'" + this.state.selectedFileBinary.split(",")[1] + "'",
-      },
-      {
-        headers: {
-          Authorization: "Client-ID 56d10e1ad4eb92f",
-        }, 
-      }
-    );
+    return axios.post("https://api.cloudinary.com/v1_1/ddowlqedx/image/upload",
+    formData);
   };
 
   handleAddCategory = (e) => {
@@ -70,12 +64,14 @@ class ModalAddCategory extends Component {
     const isValid = this.validate();
 
     if (isValid) {
-      this.fileUploadHandler().then((response) => {
+      this.fileUploadHandler().then((result) => {
+        console.log(result.data.url);
         this.setState({
-          url: response.data.data.link,
+          url: result.data.url,
         });
 
         const { nom, url, description } = this.state;
+        console.log(this.state)
         axios
           .post(`http://localhost:9092/category`, {
             nom,

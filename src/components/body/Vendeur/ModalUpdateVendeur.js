@@ -31,33 +31,33 @@ class UpdateVendeur extends Component {
 
   fileUploadHandler = () => {
     axios.post(
-      'https://api.imgur.com/3/upload', {
-      image: this.selectedFile,
-    }, {
-      headers: {
-        "Authorization": "Client-ID 56d10e1ad4eb92f",
-
+      "https://api.imgur.com/3/upload",
+      {
+        image: this.selectedFile,
+      },
+      {
+        headers: {
+          Authorization: "Client-ID 56d10e1ad4eb92f",
+        },
       }
-    }
-    )
-
-  }
+    );
+  };
 
   fetchVendeurById = () => {
     axios.get(`http://localhost:9092/Vendeur/${this.props.id}`).then(res => {
       const {
+        img,
         nom,
         prenom,
         ville,
-        region,
-        img
+        region
       } = res.data;
       this.setState({
+        img,
         nom,
         prenom,
         ville,
-        region,
-        img
+        region
       });
 
     });
@@ -84,7 +84,7 @@ class UpdateVendeur extends Component {
       prenom,
       ville,
       region,
-      url
+      img
     } = this.state;
     axios
       .put(`http://localhost:9092/Vendeur/${this.props.id}`, {
@@ -92,7 +92,7 @@ class UpdateVendeur extends Component {
         prenom,
         ville,
         region,
-        url
+        img
       })
       .then(async () => {
         console.log(" Utilisateur modifié modifié ", this.props.id);
