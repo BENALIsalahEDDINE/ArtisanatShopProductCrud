@@ -10,7 +10,7 @@ import "../../../css/body/ListProduct.css";
 class ListProduct extends Component {
   state = {
     products: [],
-    categories: ["Visage", "Cheveux", "Huile", "Peau", "Aliment"],
+    categories: ["Textile", "Cuir", "Tapis", "Vannerie","Broderie"],
   };
 
   fetchProducts = () => {
@@ -68,7 +68,6 @@ class ListProduct extends Component {
             <option>Tout</option>
             <option>Textile</option>
             <option>Cuir</option>
-            <option>Poterie</option>
             <option>Tapis</option>
             <option>Vannerie</option>
             <option>Broderie</option>

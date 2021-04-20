@@ -64,6 +64,7 @@ class ListUser extends Component {
             <option>Tout</option>
             <option>Utilisateur</option>
             <option>Administrateur</option>
+            <option>Livreur</option>
           </select>
 
           <input

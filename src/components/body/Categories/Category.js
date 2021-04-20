@@ -25,11 +25,11 @@ class Category extends Component {
   };
 
   checkCategory = () => {
-    if (this.props.category.nom === "Aliment") {
+    if (this.props.category.nom === "Broderie") {
       return 5;
-    } else if (this.props.category.nom === "Huile"){
+    } else if (this.props.category.nom === "Tapis"){
       return 3;
-    }else if (this.props.category.nom=== "Visage"){
+    }else if (this.props.category.nom=== "Textile"){
       return 1;
     } else {
       return 0;

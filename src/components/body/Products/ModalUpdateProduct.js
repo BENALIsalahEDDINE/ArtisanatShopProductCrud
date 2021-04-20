@@ -52,17 +52,17 @@ class UpdateProduct extends Component {
       });
     });
   };
-
+  
   chooseCategory = (name) => {
-    if (name === "Visage") {
+    if (name === "Textile") {
       this.setState({ idCat: 1 });
-    } else if (name === "Cheveux") {
+    } else if (name === "Cuir") {
       this.setState({ idCat: 2 });
-    } else if (name === "Huile") {
+    } else if (name === "Tapis") {
       this.setState({ idCat: 3 });
-    } else if (name === "Peau") {
+    } else if (name === "Vannerie") {
       this.setState({ idCat: 4 });
-    } else if (name === "Aliment") {
+    }else if (name === "Broderie") {
       this.setState({ idCat: 5 });
     }
   };
@@ -70,15 +70,15 @@ class UpdateProduct extends Component {
   checkCategory = () => {
     const { idCat } = this.state;
     if (idCat === 1) {
-      this.setState({ nomCat: "Visage" });
+      this.setState({ nomCat: "Textile" });
     } else if (idCat === 2) {
-      this.setState({ nomCat: "Cheveux" });
+      this.setState({ nomCat: "Cuir" });
     } else if (idCat === 3) {
-      this.setState({ nomCat: "Huile" });
+      this.setState({ nomCat: "Tapis" });
     } else if (idCat === 4) {
-      this.setState({ nomCat: "Peau" });
-    } else if (idCat === 5) {
-      this.setState({ nomCat: "Aliment" });
+      this.setState({ nomCat: "Vannerie" });
+    }else if (idCat === 5) {
+      this.setState({ nomCat: "Broderie" });
     }
   };
 
@@ -176,7 +176,6 @@ class UpdateProduct extends Component {
               <option disabled>Choisir une catégorie...</option>
               <option>Textile</option>
               <option>Cuir</option>
-              <option>Poterie</option>
               <option>Tapis</option>
               <option>Vannerie</option>
               <option>Broderie</option>

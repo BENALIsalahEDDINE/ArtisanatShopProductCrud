@@ -41,17 +41,17 @@ class Product extends Component {
   checkCategory = () => {
     const { idCat } = this.props.product;
     if (idCat === 1) {
-      return this.setState({ nomCat: "Visage" });
+      return this.setState({ nomCat: "Textile" });
     } else if (idCat === 2) {
-      return this.setState({ nomCat: "Cheveux" });
-    } else if (idCat === 3) {
-      return this.setState({ nomCat: "Huile" });
+      return this.setState({ nomCat: "Cuir" });
+   } else if (idCat === 3) {
+      return this.setState({ nomCat: "Tapis" });
     } else if (idCat === 4) {
-      return this.setState({ nomCat: "Peau" });
-    } else if (idCat === 5) {
-      return this.setState({ nomCat: "Aliment" });
-    }
-  };
+      return this.setState({ nomCat: "Vannerie" });
+    }else if (idCat === 5) {
+    return this.setState({ nomCat: "Broderie" });
+  }
+  }; 
 
   render() {
     const {

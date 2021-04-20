@@ -64,7 +64,7 @@ class ModalAddVendeur extends Component {
         image:  "'"+ this.state.selectedFileBinary.split(",")[1]+ "'",
       }, {
         headers: {
-          "Authorization": "Client-ID b22b3f6d28510a1" ,
+          Authorization: "Client-ID 56d10e1ad4eb92f" ,
         }
       }
     )

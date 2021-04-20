@@ -71,7 +71,7 @@ class ModalAddProduct extends Component {
   };
 
   fileUploadHandler = async () => {
-    console.log(this.state.selectedFile);
+   console.log(this.state.selectedFile);
     return axios.post(
       "https://api.imgur.com/3/image",
       {
@@ -79,7 +79,7 @@ class ModalAddProduct extends Component {
       },
       {
         headers: {
-          Authorization: "Client-ID b22b3f6d28510a1",
+          Authorization: "Client-ID 56d10e1ad4eb92f",
         },
       }
     );
@@ -178,17 +178,17 @@ class ModalAddProduct extends Component {
     }
     return true;
   };
-
+ 
   chooseCategory = (name) => {
-    if (name === "Visage") {
+    if (name === "Textile") {
       this.setState({ idCat: 1 });
-    } else if (name === "Cheveux") {
+    } else if (name === "Cuir") {
       this.setState({ idCat: 2 });
-    } else if (name === "Huile") {
+    } else if (name === "Tapis") {
       this.setState({ idCat: 3 });
-    } else if (name === "Peau") {
+    } else if (name === "Vannerie") {
       this.setState({ idCat: 4 });
-    } else if (name === "Aliment") {
+    }else if (name === "Broderie") {
       this.setState({ idCat: 5 });
     }
   };
@@ -236,7 +236,7 @@ class ModalAddProduct extends Component {
                     onChange={this.fileSelectedHandler}
                   />
                   <FormText color="muted">
-                    Veuillez choisir une image de profil.
+                    Veuillez choisir une image de produit.
                   </FormText>
                 </FormGroup>
                 <Label>Nom de la catégorie</Label>
@@ -249,7 +249,6 @@ class ModalAddProduct extends Component {
                   <option disabled>Choisir une catégorie...</option>
                   <option>Textile</option>
               <option>Cuir</option>
-              <option>Poterie</option>
               <option>Tapis</option>
               <option>Vannerie</option>
               <option>Broderie</option>
