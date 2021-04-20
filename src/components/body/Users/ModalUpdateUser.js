@@ -31,18 +31,13 @@ class UpdateUser extends Component {
     });
   };
 
-  fileUploadHandler = () => {
-    axios.post(
-      "https://api.imgur.com/3/upload",
-      {
-        image: this.selectedFile,
-      },
-      {
-        headers: {
-          Authorization: "Client-ID 56d10e1ad4eb92f",
-        },
-      }
-    );
+  fileUploadHandler = async () => {
+    const formData =new FormData();
+    formData.append("file",this.state.selectedFile);
+    formData.append("upload_preset","lgdqkovn");
+    console.log(this.state.selectedFile);
+    return axios.post("https://api.cloudinary.com/v1_1/ddowlqedx/image/upload",
+    formData);
   };
 
   fetchUserById = () => {

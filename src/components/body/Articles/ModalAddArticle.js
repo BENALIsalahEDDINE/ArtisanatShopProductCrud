@@ -68,20 +68,13 @@ class ModalAddArticle extends Component {
   }
 
   fileUploadHandler = async () => {
+    const formData =new FormData();
+    formData.append("file",this.state.selectedFile);
+    formData.append("upload_preset","lgdqkovn");
     console.log(this.state.selectedFile);
-    return axios.post(
-      'https://api.imgur.com/3/image', {
-      image: "'" + this.state.selectedFileBinary.split(",")[1] + "'",
-
-
-    }, {
-      headers: {
-        Authorization: "Client-ID 56d10e1ad4eb92f",
-      }
-    }
-    )
-
-  }
+    return axios.post("https://api.cloudinary.com/v1_1/ddowlqedx/image/upload",
+    formData);
+  };
 
   handleAddArticle = e => {
 
@@ -90,11 +83,11 @@ class ModalAddArticle extends Component {
     const isValid = true //this.validate();
     console.log("you pressed add");
 
-    if (this.validate()) {
-
-      this.fileUploadHandler().then(result => {
+    if (isValid) {
+      this.fileUploadHandler().then((result) => {
+        console.log(result.data.imageurl);
         this.setState({
-          imageurl: result.data.data.link,
+          imageurl: result.data.imageurl,
         });
 
         const {
@@ -105,6 +98,7 @@ class ModalAddArticle extends Component {
           text,
           imageurl
         } = this.state;
+        console.log(this.state)
         axios
           .post("http://localhost:9092/Article", {
             editeur,
@@ -248,10 +242,12 @@ class ModalAddArticle extends Component {
               <FormGroup>
                 <Label>Saisissez la date de création</Label>
                 <Input
+                  type="date"
                   placeholder="Date..."
                   name="datecreation"
                   onChange={this.handleOnChange}
                 ></Input>
+                
                 <p style={{ fontSize: 12, color: "red" }}>
                   {this.state.datecreationError}
                 </p>

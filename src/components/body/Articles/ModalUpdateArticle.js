@@ -163,11 +163,13 @@ class UpdateArticle extends Component {
           <FormGroup>
             <Label>Date de création</Label>
             <Input
+             type="date"
               placeholder="Date de création..."
               name="datecreation"
               onChange={this.handleOnChange}
               value={datecreation}
             ></Input>
+            
           </FormGroup>
           <FormGroup>
             <Label>L'url de l'image</Label>
