@@ -39,7 +39,7 @@ class UpdateVendeur extends Component {
   };
 
   fetchVendeurById = () => {
-    axios.get(`http://localhost:9092/Vendeur/${this.props.id}`).then(res => {
+    axios.get(`http://localhost:8080/Vendeur/${this.props.id}`).then(res => {
       const {
         nom,
         prenom,
@@ -82,7 +82,7 @@ class UpdateVendeur extends Component {
       url
     } = this.state;
     axios
-      .put(`http://localhost:9092/Vendeur/${this.props.id}`, {
+      .put(`http://localhost:8080/Vendeur/${this.props.id}`, {
         nom,
         prenom,
         ville,

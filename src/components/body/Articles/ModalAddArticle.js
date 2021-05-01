@@ -100,7 +100,7 @@ class ModalAddArticle extends Component {
         } = this.state;
         console.log(this.state)
         axios
-          .post("http://localhost:9092/Article", {
+          .post("http://localhost:8080/Article", {
             editeur,
             datecreation,
             categorie,

@@ -23,7 +23,7 @@ class UpdateArticle extends Component {
   };
 
   fetchArticleById = () => {
-    axios.get(`http://localhost:9092/Article/${this.props.id}`).then(res => {
+    axios.get(`http://localhost:8080/Article/${this.props.id}`).then(res => {
       const {
         editeur,
         datecreation,
@@ -72,7 +72,7 @@ class UpdateArticle extends Component {
       imageurl   
     } = this.state;
     axios
-      .put(`http://localhost:9092/Article/${this.props.id}`, {
+      .put(`http://localhost:8080/Article/${this.props.id}`, {
       editeur,
       datecreation,
       categorie,

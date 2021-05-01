@@ -27,7 +27,7 @@ class UpdateProduct extends Component {
   };
 
   fetchProductById = () => {
-    axios.get(`http://localhost:9092/product/${this.props.id}`).then((res) => {
+    axios.get(`http://localhost:8080/product/${this.props.id}`).then((res) => {
       const {
         idCat,
         nom,
@@ -114,7 +114,7 @@ class UpdateProduct extends Component {
     } = this.state;
     console.log("test", idCat);
     axios
-      .put(`http://localhost:9092/product/${this.props.id}`, {
+      .put(`http://localhost:8080/product/${this.props.id}`, {
         idCat,
         nom,
         description,

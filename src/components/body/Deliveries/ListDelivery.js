@@ -11,7 +11,7 @@ export default class ListDelivery extends Component {
   };
 
   fetchCommandesByIdLivreur = async () => {
-    return axios.get(`http://localhost:9092/commandes`).then((res) => {
+    return axios.get(`http://localhost:8080/commandes`).then((res) => {
       console.log(res.data);
       let commande = res.data.filter(
         (commande) => commande.idLivreur === this.state.idLivreur

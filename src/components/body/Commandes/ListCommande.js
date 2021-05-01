@@ -10,7 +10,7 @@ class ListCommande extends Component {
   };
 
   fetchCommandes = async () => {
-    return axios.get(`http://localhost:9092/commandes`).then((res) => {
+    return axios.get(`http://localhost:8080/commandes`).then((res) => {
       console.log(res.data);
       const commande = res.data.filter(
         (commande) => commande.state !== "Achevé"

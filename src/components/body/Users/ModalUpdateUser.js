@@ -41,7 +41,7 @@ class UpdateUser extends Component {
   };
 
   fetchUserById = () => {
-    axios.get(`http://localhost:9092/user/${this.props.id}`).then((res) => {
+    axios.get(`http://localhost:8080/user/${this.props.id}`).then((res) => {
       const {
         firstName,
         lastName,
@@ -86,7 +86,7 @@ class UpdateUser extends Component {
       url,
     } = this.state;
     axios
-      .put(`http://localhost:9092/user/${this.props.id}`, {
+      .put(`http://localhost:8080/user/${this.props.id}`, {
         firstName,
         lastName,
         birthDate,

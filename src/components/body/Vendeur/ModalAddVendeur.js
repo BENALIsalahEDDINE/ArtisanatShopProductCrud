@@ -95,7 +95,7 @@ class ModalAddVendeur extends Component {
     } = this.state;
     console.log(this.state)
       axios
-        .post("http://localhost:9092/Vendeur", {
+        .post("http://localhost:8080/Vendeur", {
           img,
           nom,
           prenom,

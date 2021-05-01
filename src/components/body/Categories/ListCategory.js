@@ -13,7 +13,7 @@ class ListCategory extends Component {
   };
 
   fetchCategories = () => {
-    axios.get(`http://localhost:9092/category`).then((res) => {
+    axios.get(`http://localhost:8080/category`).then((res) => {
       const categories = res.data;
       console.log(categories);
       this.setState({ categories });
@@ -30,7 +30,7 @@ class ListCategory extends Component {
 
   onSubmitSearchText = () => {
     axios
-      .get(`http://localhost:9092/category?search=` + this.state.search)
+      .get(`http://localhost:8080/category?search=` + this.state.search)
       .then((res) => {
         const categories = res.data;
         this.setState({ categories });

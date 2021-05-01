@@ -13,7 +13,7 @@ class ListVendeur extends Component {
   };
 
   fetchVendeurs = async () => {
-    return axios.get("http://localhost:9092/Vendeur").then(res => {
+    return axios.get("http://localhost:8080/Vendeur").then(res => {
       const vendeurs = res.data;
       console.log(vendeurs);
       this.setState({ vendeurs });
@@ -66,6 +66,7 @@ class ListVendeur extends Component {
         </>
 
     );
-}}
+}
+}
 
 export default ListVendeur;

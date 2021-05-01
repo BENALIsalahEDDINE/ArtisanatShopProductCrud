@@ -15,7 +15,7 @@ class ListArticle extends Component {
 
   fetchArticles = async () => {
     console.log("trying to fetch")
-    return axios.get("http://localhost:9092/Article").then(res => {
+    return axios.get("http://localhost:8080/Article").then(res => {
       const articles = res.data;
 
       this.setState({ articles });
@@ -35,7 +35,7 @@ class ListArticle extends Component {
 
   onSubmitSearchText = () => {
     axios
-      .post("http://localhost:9092/Article/search", {
+      .post("http://localhost:8080/Article/search", {
         text: this.state.search
       })
       .then(res => {

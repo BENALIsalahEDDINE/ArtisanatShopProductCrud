@@ -106,7 +106,7 @@ class ModalAddProduct extends Component {
         } = this.state;
         console.log(this.state)
         axios
-          .post(`http://localhost:9092/product`, {
+          .post(`http://localhost:8080/product`, {
             idCat,
             nom,
             description,

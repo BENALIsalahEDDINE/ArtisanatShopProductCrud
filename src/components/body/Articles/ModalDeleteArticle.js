@@ -6,7 +6,7 @@ import axios from "axios";
 class ModalDeleteArticle extends Component {
   handleDelete = () => {
     console.log("delete", this.props.id);
-    axios.delete(`http://localhost:9092/Article/${this.props.id}`).then(() => {
+    axios.delete(`http://localhost:8080/Article/${this.props.id}`).then(() => {
       this.props.toggleModalDeleteArticle();
       this.props.fetchArticles();
     });

@@ -61,7 +61,7 @@ class UpdateCategory extends Component {
   };
 
   fetchCategoryById = () => {
-    axios.get(`http://localhost:9092/category/${this.props.id}`).then((res) => {
+    axios.get(`http://localhost:8080/category/${this.props.id}`).then((res) => {
       const { id, nom, url, description } = res.data;
 
       this.setState({
@@ -97,7 +97,7 @@ class UpdateCategory extends Component {
     }
     const { nom, url, description } = this.state;
     axios
-      .put(`http://localhost:9092/category/${this.props.id}`, {
+      .put(`http://localhost:8080/category/${this.props.id}`, {
         nom,
         url,
         description,

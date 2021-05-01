@@ -89,7 +89,7 @@ class ModalAddUser extends Component {
         } = this.state;
         console.log(this.state)
         axios
-          .post(`http://localhost:9092/user`, {
+          .post(`http://localhost:8080/user`, {
             firstName,
             lastName,
             birthDate,
