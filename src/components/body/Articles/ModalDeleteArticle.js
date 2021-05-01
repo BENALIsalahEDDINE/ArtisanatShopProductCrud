@@ -11,7 +11,7 @@ class ModalDeleteArticle extends Component {
       this.props.fetchArticles();
     });
   };
-
+//salah
   render() {
     return (
       <>
