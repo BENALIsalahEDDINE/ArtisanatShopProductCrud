@@ -74,12 +74,10 @@ class UpdateProduct extends Component {
     } else if (idCat === 2) {
       this.setState({ nomCat: "Cuir" });
     } else if (idCat === 3) {
-      this.setState({ nomCat: "Poterie" });
-    } else if (idCat === 4) {
       this.setState({ nomCat: "Tapis" });
-    } else if (idCat === 5) {
+    } else if (idCat === 4) {
       this.setState({ nomCat: "Vannerie" });
-    }else if (idCat === 6) {
+    }else if (idCat === 5) {
       this.setState({ nomCat: "Broderie" });
     }
   };

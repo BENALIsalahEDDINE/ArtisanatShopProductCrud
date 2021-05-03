@@ -181,14 +181,12 @@ class ModalAddProduct extends Component {
       this.setState({ idCat: 1 });
     } else if (name === "Cuir") {
       this.setState({ idCat: 2 });
-    }else if (name === "Poterie") {
-      this.setState({ idCat: 3 });
     } else if (name === "Tapis") {
-      this.setState({ idCat: 4 });
+      this.setState({ idCat: 3 });
     } else if (name === "Vannerie") {
-      this.setState({ idCat: 5 });
+      this.setState({ idCat: 4 });
     }else if (name === "Broderie") {
-      this.setState({ idCat: 6 });
+      this.setState({ idCat: 5 });
     }
   };
 
@@ -248,7 +246,6 @@ class ModalAddProduct extends Component {
                   <option disabled>Choisir une catégorie...</option>
                   <option>Textile</option>
               <option>Cuir</option>
-              <option>Poterie</option>
               <option>Tapis</option>
               <option>Vannerie</option>
               <option>Broderie</option>
