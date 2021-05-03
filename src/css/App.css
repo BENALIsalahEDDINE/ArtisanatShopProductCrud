@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Jura:400');
 body {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  
+
+  display: grid;
+  
+
+ 
+  
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5,yellow,white);
+  background-size: 400% 400%;
+  height: max-content;
+  animation: Gradient 15s ease infinite;
+  box-sizing: border-box;
 }
+
