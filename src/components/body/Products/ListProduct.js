@@ -10,7 +10,7 @@ import "../../../css/body/ListProduct.css";
 class ListProduct extends Component {
   state = {
     products: [],
-    categories: ["Textile", "Cuir", "Tapis", "Vannerie","Broderie"],
+    categories: ["Textile", "Cuir", "Tapis", "Vannerie", "Broderie"],
   };
 
   fetchProducts = () => {

@@ -48,6 +48,11 @@ export default class DashboardAdmin extends Component {
               <p className="text-dashboard">Fournisseurs</p>
             </Link>
           </div>
+          <div className="col-3 center-block text-center">
+            <Link to="/statistics">
+              <p className="text-dashboard">Statistics</p>
+            </Link>
+          </div>
         </div>
 
         <Footer />

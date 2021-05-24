@@ -20,6 +20,8 @@ import PrivateRouteAdmin from "./routes/PrivateRouteAdmin";
 import PrivateRouteLivreur from "./routes/PrivateRouteLivreur";
 
 import HomePage from "./components/body/Home/HomePage";
+import Statistic from "./components/body/Statistics/Statistic";
+import StatMars from "./components/body/Statistics/StatMars";
 
 class App extends Component {
   render() {
@@ -33,6 +35,12 @@ class App extends Component {
             <Route path="/login" exact>
               <Login />
             </Route>
+            <Route path="/statistics">
+              <Statistic />
+            </Route>
+            <Route path="/statmars" exact>
+              <StatMars />
+            </Route>
 
             {
               //accessible aux administrateurs uniquement
@@ -44,8 +52,13 @@ class App extends Component {
             />
             <PrivateRouteAdmin exact path="/products" component={ProductPage} />
             <PrivateRouteAdmin exact path="/users" component={UserPage} />
-            <PrivateRouteAdmin exact path="/fournisseurs" component={VendeurPage} />
+            <PrivateRouteAdmin
+              exact
+              path="/fournisseurs"
+              component={VendeurPage}
+            />
             <PrivateRouteAdmin exact path="/articles" component={ArticlePage} />
+
             <PrivateRouteAdmin
               exact
               path="/categories"
