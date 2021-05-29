@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LineChart from "./LineChart";
+
 import LineChart2 from "./LineChart2";
 import BarChart from "./BarChart";
 import HeaderAdmin from "../../layout/HeaderAdmin";

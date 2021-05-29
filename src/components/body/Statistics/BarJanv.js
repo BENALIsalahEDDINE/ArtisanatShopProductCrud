@@ -30,12 +30,6 @@ const BarJanv = () => {
                 ],
                 borderWidth: 1,
               },
-              // {
-              //   label: 'Quantity',
-              //   data: [47, 52, 67, 58, 9, 50],
-              //   backgroundColor: 'orange',
-              //   borderColor: 'red',
-              // },
             ],
           }}
           height={400}

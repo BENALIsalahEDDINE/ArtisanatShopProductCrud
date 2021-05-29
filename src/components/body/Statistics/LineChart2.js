@@ -5,6 +5,7 @@ import { Line } from "react-chartjs-2";
 import "./Style.css";
 
 import StatisticJanv from "./StatisticJanv";
+import StatisticFev from "./StatisticFev";
 
 class LineChart2 extends React.Component {
   constructor(props) {
@@ -17,11 +18,11 @@ class LineChart2 extends React.Component {
       month: "selected month",
       monthID: 0,
       myData: {
-        labels: [1, 3, 8, 10],
+        labels: [],
         datasets: [
           {
-            label: "Hello there!",
-            data: [5, 70, 90, 90, 90],
+            label: " ",
+            data: [],
             backgroundColor: ["rgba(0, 0, 0, 1)"],
             borderWidth: 5,
           },
@@ -29,7 +30,6 @@ class LineChart2 extends React.Component {
       },
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -64,12 +64,9 @@ class LineChart2 extends React.Component {
       case "Mai":
         this.state.monthID = 5;
         break;
-
-      default:
-        console.log("You should select a month!!");
-        break;
     }
     console.log(this.state.monthID);
+    console.log(this.state.myData.datasets[0].data);
     var totalVentesParMois = 0;
 
     for (const element of this.state.ventes) {
@@ -77,63 +74,28 @@ class LineChart2 extends React.Component {
         totalVentesParMois = totalVentesParMois + element.qte;
         this.state.nbrVentes.push(element.qte);
 
-        this.state.days.push(element.day);
+        this.state.myData.labels.push(element.day);
       }
     }
-    console.log(this.state.nbrVentes, this.state.days);
-    this.state.myData.labels = this.state.days;
+
     this.state.myData.datasets[0].data = this.state.nbrVentes;
 
     console.log(this.state.myData);
-  }
-  handleSubmit() {
-    ReactDOM.render(<StatisticJanv />, document.getElementById("root"));
-  }
-
-  /*
-  handleSubmit() {
-    var totalVentesParMois = 0;
-    let nbrVentes = [];
-    let days = [];
-    for (const element of this.state.ventes) {
-      if (element.mois == this.state.monthID) {
-        totalVentesParMois = totalVentesParMois + element.qte;
-        nbrVentes.push(element.qte);
-        days.push(element.day);
-      }
+    if (this.state.monthID == 1) {
+      ReactDOM.render(<StatisticJanv />, document.getElementById("root"));
     }
-    this.state.setData({
-      labels: days,
-      datasets: [
-        {
-          label: "level of thiccness",
-          data: nbrVentes,
-          backgroundColor: ["rgba(0, 0, 0, 1)"],
-          borderWidth: 5,
-        },
-      ],
-    });
-
-    console.log(nbrVentes, days);
-  }*/
+    if (this.state.monthID == 2) {
+      ReactDOM.render(<StatisticFev />, document.getElementById("root"));
+    }
+  }
 
   render() {
     return (
       <div>
         <div className="drop">
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleChange}>
             <select className="form-select">
               <option value="2021">2021</option>
-              <option value="2022">2022</option>
-              <option value="2023">2023</option>
-              <option value="2024">2024</option>
-              <option value="2025">2025</option>
-              <option value="2026">2026</option>
-              <option value="2027">2027</option>
-              <option value="2028">2028</option>
-              <option value="2029">2029</option>
-              <option value="2030">2030</option>
-              <option value="2031">2031 </option>
             </select>
             <select className="form-select" onChange={this.handleChange}>
               <option value="default-value">select month</option>
@@ -150,13 +112,13 @@ class LineChart2 extends React.Component {
               <option value="Novembre">Novembre </option>
               <option value="Décembre">Décembre </option>
             </select>
-            <input type="submit" value="Submit" className="btn btn-primary" />
           </form>
         </div>
         <div className="chartContainer">
           <h1>Nombre de ventes par mois</h1>
           <div>
             <Line
+              data={this.state.myData}
               options={{
                 responsive: true,
                 title: { text: "THICCNESS SCALE", display: true },

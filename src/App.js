@@ -21,7 +21,6 @@ import PrivateRouteLivreur from "./routes/PrivateRouteLivreur";
 
 import HomePage from "./components/body/Home/HomePage";
 import Statistic from "./components/body/Statistics/Statistic";
-import StatMars from "./components/body/Statistics/StatMars";
 
 class App extends Component {
   render() {
@@ -38,13 +37,7 @@ class App extends Component {
             <Route path="/statistics">
               <Statistic />
             </Route>
-            <Route path="/statmars" exact>
-              <StatMars />
-            </Route>
 
-            {
-              //accessible aux administrateurs uniquement
-            }
             <PrivateRouteAdmin
               exact
               path="/dashboardAdmin"

@@ -12,7 +12,7 @@ const BarFev = () => {
             datasets: [
               {
                 label: "",
-                data: [290, 102, 350, 222, 450, 200],
+                data: [433, 102, 350, 222, 200, 90],
                 backgroundColor: [
                   "rgba(255, 51, 51, 1)",
                   "rgba(95, 40, 200, 1)",
@@ -30,12 +30,6 @@ const BarFev = () => {
                 ],
                 borderWidth: 1,
               },
-              // {
-              //   label: 'Quantity',
-              //   data: [47, 52, 67, 58, 9, 50],
-              //   backgroundColor: 'orange',
-              //   borderColor: 'red',
-              // },
             ],
           }}
           height={400}

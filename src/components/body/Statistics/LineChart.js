@@ -5,6 +5,8 @@ import "./Style.css";
 import { NavLink, Link } from "react-router-dom";
 import ReactDOM from "react-dom";
 import StatisticFev from "./StatisticFev";
+import Statistic from "./Statistic";
+import StatisticJanv from "./StatisticJanv";
 const url = "http://localhost:3000/statmars";
 const LineChart = () => {
   const [chartData, setData] = useState({});
@@ -12,227 +14,39 @@ const LineChart = () => {
   const [employeeAge, setEmployeeAge] = useState([]);
 
   const chart = () => {
-    let empSal = [];
-    let empID = [];
-    var emps = [
-      {
-        id: "1",
-        employee_name: "Tiger Nixon",
-        employee_salary: "5",
-        employee_age: "1",
-        profile_image: "",
-      },
-      {
-        id: "2",
-        employee_name: "Garrett Winters",
-        employee_salary: "20",
-        employee_age: "2",
-        profile_image: "",
-      },
-      {
-        id: "3",
-        employee_name: "Ashton Cox",
-        employee_salary: "25",
-        employee_age: "3",
-        profile_image: "",
-      },
-      {
-        id: "4",
-        employee_name: "Cedric Kelly",
-        employee_salary: "26",
-        employee_age: "4",
-        profile_image: "",
-      },
-      {
-        id: "5",
-        employee_name: "Airi Satou",
-        employee_salary: "28",
-        employee_age: "5",
-        profile_image: "",
-      },
-      {
-        id: "6",
-        employee_name: "Brielle Williamson",
-        employee_salary: "30",
-        employee_age: "6",
-        profile_image: "",
-      },
-      {
-        id: "7",
-        employee_name: "Herrod Chandler",
-        employee_salary: "40",
-        employee_age: "7",
-        profile_image: "",
-      },
-      {
-        id: "8",
-        employee_name: "Rhona Davidson",
-        employee_salary: "47",
-        employee_age: "8",
-        profile_image: "",
-      },
-      {
-        id: "9",
-        employee_name: "Colleen Hurst",
-        employee_salary: "50",
-        employee_age: "9",
-        profile_image: "",
-      },
-      {
-        id: "10",
-        employee_name: "Sonya Frost",
-        employee_salary: "50",
-        employee_age: "23",
-        profile_image: "",
-      },
-      {
-        id: "11",
-        employee_name: "Jena Gaines",
-        employee_salary: "59",
-        employee_age: "30",
-        profile_image: "",
-      },
-      {
-        id: "12",
-        employee_name: "Quinn Flynn",
-        employee_salary: "60",
-        employee_age: "22",
-        profile_image: "",
-      },
-      {
-        id: "13",
-        employee_name: "Charde Marshall",
-        employee_salary: "63",
-        employee_age: "36",
-        profile_image: "",
-      },
-      {
-        id: "14",
-        employee_name: "Haley Kennedy",
-        employee_salary: "66",
-        employee_age: "43",
-        profile_image: "",
-      },
-      {
-        id: "15",
-        employee_name: "Tatyana Fitzpatrick",
-        employee_salary: "69",
-        employee_age: "19",
-        profile_image: "",
-      },
-      {
-        id: "16",
-        employee_name: "Michael Silva",
-        employee_salary: "68",
-        employee_age: "66",
-        profile_image: "",
-      },
-      {
-        id: "17",
-        employee_name: "Paul Byrd",
-        employee_salary: "66",
-        employee_age: "64",
-        profile_image: "",
-      },
-      {
-        id: "18",
-        employee_name: "Gloria Little",
-        employee_salary: "65",
-        employee_age: "59",
-        profile_image: "",
-      },
-      {
-        id: "19",
-        employee_name: "Bradley Greer",
-        employee_salary: "60",
-        employee_age: "41",
-        profile_image: "",
-      },
-      {
-        id: "20",
-        employee_name: "Dai Rios",
-        employee_salary: "71",
-        employee_age: "35",
-        profile_image: "",
-      },
-      {
-        id: "21",
-        employee_name: "Jenette Caldwell",
-        employee_salary: "73",
-        employee_age: "30",
-        profile_image: "",
-      },
-      {
-        id: "22",
-        employee_name: "Yuri Berry",
-        employee_salary: "74",
-        employee_age: "40",
-        profile_image: "",
-      },
-      {
-        id: "23",
-        employee_name: "Caesar Vance",
-        employee_salary: "77",
-        employee_age: "21",
-        profile_image: "",
-      },
-      {
-        id: "24",
-        employee_name: "Doris Wilder",
-        employee_salary: "90",
-        employee_age: "23",
-        profile_image: "",
-      },
-      {
-        id: "25",
-        employee_name: "Caesar Vance",
-        employee_salary: "100",
-        employee_age: "21",
-        profile_image: "",
-      },
-      {
-        id: "26",
-        employee_name: "Doris Wilder",
-        employee_salary: "102",
-        employee_age: "23",
-        profile_image: "",
-      },
-      {
-        id: "27",
-        employee_name: "Caesar Vance",
-        employee_salary: "130",
-        employee_age: "21",
-        profile_image: "",
-      },
-      {
-        id: "28",
-        employee_name: "Doris Wilder",
-        employee_salary: "150",
-        employee_age: "23",
-        profile_image: "",
-      },
+    let nbrVentes = [
+      5, 20, 25, 27, 29, 30, 39, 47, 50, 50, 60, 63, 66, 69, 67, 65, 60, 71, 73,
+      74, 78, 90, 95, 100, 105, 130, 150, 140, 148, 153, 170,
+    ];
+    let days = [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+      22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
     ];
 
-    // Fetch Function
-
-    for (const dataObj of emps) {
-      empSal.push(parseInt(dataObj.employee_salary));
-      empID.push(parseInt(dataObj.id));
-    }
     setData({
-      labels: empID,
+      labels: days,
       datasets: [
         {
           label: "level of thiccness",
-          data: empSal,
+          data: nbrVentes,
           backgroundColor: ["rgba(0, 0, 0, 1)"],
           borderWidth: 5,
         },
       ],
     });
 
-    console.log(empSal, empID);
+    console.log(nbrVentes, days);
   };
+  function hundleChange(event) {
+    var month = event.target.value;
+    if (month == "Février") {
+      ReactDOM.render(<StatisticFev />, document.getElementById("root"));
+    } else if (month == "Janvier") {
+      ReactDOM.render(<StatisticJanv />, document.getElementById("root"));
+    } else {
+      ReactDOM.render(<Statistic />, document.getElementById("root"));
+    }
+  }
 
   useEffect(() => {
     chart();
@@ -244,18 +58,8 @@ const LineChart = () => {
         <form>
           <select className="form-select">
             <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-            <option value="2025">2025</option>
-            <option value="2026">2026</option>
-            <option value="2027">2027</option>
-            <option value="2028">2028</option>
-            <option value="2029">2029</option>
-            <option value="2030">2030</option>
-            <option value="2031">2031 </option>
           </select>
-          <select className="form-select">
+          <select className="form-select" onChange={hundleChange}>
             <option value="default-value">select month</option>
             <option value="Janvier">Janvier</option>
             <option value="Février">Février</option>
@@ -270,7 +74,6 @@ const LineChart = () => {
             <option value="Novembre">Novembre </option>
             <option value="Décembre">Décembre </option>
           </select>
-          <input type="submit" value="Submit" className="btn btn-primary" />
         </form>
       </div>
       <div className="chartContainer">
