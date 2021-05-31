@@ -67,9 +67,7 @@ class HeaderAdmin extends Component {
                   </NavLink>
                 </NavItem>
               </Nav>
-              <button className="btn btn-success ml-auto mr-1">
-                <i className="fas fa-user-circle" />
-              </button>
+            
               <button
                 className="btn btn-success  mr-1"
                 onClick={(e) => logout(e)}

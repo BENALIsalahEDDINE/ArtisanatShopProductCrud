@@ -11,7 +11,7 @@ import DeliveryPage from "./Pages/DeliveryPage";
 import VendeurPage from "./Pages/VendeurPage";
 import ArticlePage from "./Pages/ArticlePage";
 import NotFound from "./Pages/NotFound";
-
+//ss
 import Login from "./components/auth/Login";
 import DashboardAdmin from "./components/body/Home/DashboardAdmin";
 import DashboardLivreur from "./components/body/Home/DashboardLivreur";
@@ -51,6 +51,16 @@ class App extends Component {
               path="/categories"
               component={CategoryPage}
             />
+            {/* <PrivateRouteAdmin
+              exact
+              path="/commandes"
+              component={CommandePage}
+            />
+            <PrivateRouteAdmin
+              exact
+              path="/deliveries"
+              component={DeliveryPage}
+            /> */}
 
             {
               //accessible aux livreurs uniquement
