@@ -25,11 +25,7 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-<<<<<<< HEAD
-    "start": "react-scripts start --host 0.0.0.0",
-=======
     "start": "react-scripts start",
->>>>>>> 7f2a2149cdc81afc7fe136ada19bf2e0e19f0bd2
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
