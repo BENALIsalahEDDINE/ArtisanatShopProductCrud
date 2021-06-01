@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import {
   Collapse,
   Navbar,
@@ -67,6 +68,11 @@ class HeaderAdmin extends Component {
                   <NavLink href="/statistics" className="nav-element">
                     {" "}
                     Statistics
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/boite" className="nav-element">
+                    Boite
                   </NavLink>
                 </NavItem>
               </Nav>

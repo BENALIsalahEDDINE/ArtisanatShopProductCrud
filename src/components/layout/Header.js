@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import {
   Collapse,
   Navbar,
@@ -28,7 +29,7 @@ class Header extends Component {
           >
             <NavbarBrand href="/login">
               {" "}
-              Artisanat<em className="text-success">SHOP </em>
+              Artisanat<em  id="emm">SHOP </em>
             </NavbarBrand>
             <NavbarToggler />
             <Collapse navbar>
@@ -55,7 +56,7 @@ class Header extends Component {
                     Fournisseurs
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                {/* <NavItem>
                   <NavLink href="/commandes" className="nav-element">
                     {" "}
                     Commandes{" "}
@@ -66,11 +67,26 @@ class Header extends Component {
                     {" "}
                     Livraisons{" "}
                   </NavLink>
+                </NavItem> */}
+                <NavItem>
+                  <NavLink href="/articles" className="nav-element">
+                    {" "}
+                    Articles
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/statistics" className="nav-element">
+                    {" "}
+                    Statistics
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/boite" className="nav-element">
+                    Boite
+                  </NavLink>
                 </NavItem>
               </Nav>
-              <button className="btn btn-success ml-auto mr-1">
-                <i className="fas fa-user-circle" />
-              </button>
+             
               <button className="btn btn-success  mr-1">
                 <i className="fas fa-sign-out-alt" />
               </button>

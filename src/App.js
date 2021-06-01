@@ -11,7 +11,7 @@ import DeliveryPage from "./Pages/DeliveryPage";
 import VendeurPage from "./Pages/VendeurPage";
 import ArticlePage from "./Pages/ArticlePage";
 import NotFound from "./Pages/NotFound";
-//ss
+
 import Login from "./components/auth/Login";
 import DashboardAdmin from "./components/body/Home/DashboardAdmin";
 import DashboardLivreur from "./components/body/Home/DashboardLivreur";
@@ -20,7 +20,9 @@ import PrivateRouteAdmin from "./routes/PrivateRouteAdmin";
 import PrivateRouteLivreur from "./routes/PrivateRouteLivreur";
 
 import HomePage from "./components/body/Home/HomePage";
+import BoitePage from "./Pages/BoitePage";
 import Statistic from "./components/body/Statistics/Statistic";
+
 
 class App extends Component {
   render() {
@@ -34,10 +36,10 @@ class App extends Component {
             <Route path="/login" exact>
               <Login />
             </Route>
-            <Route path="/statistics">
-              <Statistic />
-            </Route>
 
+            {
+              //accessible aux administrateurs uniquement
+            }
             <PrivateRouteAdmin
               exact
               path="/dashboardAdmin"
@@ -45,19 +47,16 @@ class App extends Component {
             />
             <PrivateRouteAdmin exact path="/products" component={ProductPage} />
             <PrivateRouteAdmin exact path="/users" component={UserPage} />
-            <PrivateRouteAdmin
-              exact
-              path="/fournisseurs"
-              component={VendeurPage}
-            />
+            <PrivateRouteAdmin exact path="/fournisseurs" component={VendeurPage} />
             <PrivateRouteAdmin exact path="/articles" component={ArticlePage} />
-
+            <PrivateRouteAdmin exact path="/boite" component={BoitePage} />
+            <PrivateRouteAdmin exact path="/statistics" component={Statistic} />
             <PrivateRouteAdmin
               exact
               path="/categories"
               component={CategoryPage}
             />
-            {/* <PrivateRouteAdmin
+             <PrivateRouteAdmin
               exact
               path="/commandes"
               component={CommandePage}
@@ -66,7 +65,7 @@ class App extends Component {
               exact
               path="/deliveries"
               component={DeliveryPage}
-            /> */}
+            /> 
 
             {
               //accessible aux livreurs uniquement
